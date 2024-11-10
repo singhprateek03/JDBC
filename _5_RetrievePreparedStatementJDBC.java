@@ -8,13 +8,13 @@ public class _5_RetrievePreparedStatementJDBC {
     String password = "prateek@8810";
     String query = "SELECT * FROM employees WHERE name = ? AND job_title = ?";  // ? -> Placeholder
 
-    try{
-        Class.forName("com.sql.jdbc.Driver");   // Loading Drivers for connecting database
-        System.out.println("Drivers loaded successfully!");
-    }
-    catch(ClassNotFoundException e){    // forName() -> Yeah method Exception deta hai isi liye try-catch ka use kiya hai
-        System.out.println(e.getMessage());
-    }
+        try{
+            Class.forName("com.sql.jdbc.Driver");   // Loading Drivers for connecting database
+            System.out.println("Driver Loaded successfully!");
+        }
+        catch (ClassNotFoundException e){   // forName() -> Yeah method Exception deta hai isi liye try-catch ka use kiya hai
+            System.out.println(e.getMessage());
+        }
 
     try{
         Connection con = DriverManager.getConnection(url, username, password);
