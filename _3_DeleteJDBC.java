@@ -1,25 +1,26 @@
 import java.sql.*;
 
-public class DeleteJDBC {
+public class _3_DeleteJDBC {
     public static void main(String[] args) throws ClassNotFoundException {
 
+        // Variables
         String url = "jdbc:mysql://localhost:3306/mydatabase";
         String username = "root";
         String password = "prateek@8810";
-        String query = "DELETE from employees where ID = 103;";
+        String query = "DELETE from employees where ID = 4;";
 
         try {
-            Class.forName("com.sql.jdbc.Driver");
+            Class.forName("com.sql.jdbc.Driver");   // Loading Drivers for connecting database
             System.out.println("Driver Loaded successfully!");
-        } catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {    // forName() -> Yeah method Exception deta hai isi liye try-catch ka use kiya hai
             System.out.println(e.getMessage());
         }
 
         try {
-            Connection con = DriverManager.getConnection(url, username, password);
+            Connection con = DriverManager.getConnection(url, username, password);  // Connecting Database
             System.out.println("Connection establish successfully!!!");
             Statement stmt = con.createStatement();
-            int rowsAffected = stmt.executeUpdate(query);
+            int rowsAffected = stmt.executeUpdate(query);   // executeUpdate() -> Jab data Insert/Update/Delete karna hota hai tab yeah method use hota hai
 
             if (rowsAffected > 0) {
                 System.out.println("Deletion Successfully. " + rowsAffected + " row(s) affected.");

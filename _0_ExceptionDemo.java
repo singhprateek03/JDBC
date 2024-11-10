@@ -1,6 +1,5 @@
-import java.lang.reflect.Array;
 import java.util.Scanner;
-public class ExceptionDemo {
+public class _0_ExceptionDemo {
     public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
 

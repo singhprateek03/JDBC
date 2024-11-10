@@ -1,26 +1,27 @@
 import java.sql.*;
 
-public class InsertJDBC {
+public class _2_InsertJDBC {
     public static void main(String[] args) throws ClassNotFoundException{
 
+                // Variables
                 String url = "jdbc:mysql://localhost:3306/mydatabase";
                 String username = "root";
                 String password = "prateek@8810";
                 String query = "INSERT INTO employees(id, name, job_title, salary) VALUES (104, 'Peter', 'ReactJs Developer',60000);";
 
                 try{
-                    Class.forName("com.sql.jdbc.Driver");
+                    Class.forName("com.sql.jdbc.Driver");   // Loading Drivers for connecting database
                     System.out.println("Driver Loaded successfully!");
                 }
-                catch (ClassNotFoundException e){
+                catch (ClassNotFoundException e){   // forName() -> Yeah method Exception deta hai isi liye try-catch ka use kiya hai
                     System.out.println(e.getMessage());
                 }
 
                 try{
-                    Connection con = DriverManager.getConnection(url, username, password);
+                    Connection con = DriverManager.getConnection(url, username, password);  // Connecting Database
                     System.out.println("Connection establish successfully!!!");
                     Statement stmt = con.createStatement();
-                    int rowsAffected = stmt.executeUpdate(query);
+                    int rowsAffected = stmt.executeUpdate(query); // executeUpdate() -> Jab data Insert/Update/Delete karna hota hai tab yeah method use hota hai
 
                     if (rowsAffected>0){
                         System.out.println("Insert Successfully. "+rowsAffected+" row(s) affected.");
