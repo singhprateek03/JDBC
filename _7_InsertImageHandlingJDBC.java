@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.*;
 
-public class _7_ImageHandlingJDBC {
+public class _7_InsertImageHandlingJDBC {
     public static void main(String[] args){
 
         // Variables
